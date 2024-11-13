@@ -189,6 +189,25 @@
 	);
 
 	const searchQuery = writable('');
+	const tableActions = {
+		items: [
+			{ label: 'Message Performer', action: () => console.log('Message') },
+			{ label: 'Send reminder', action: () => console.log('Send reminder') },
+			{ label: 'Display on event page', action: () => console.log('Display') }
+		]
+	};
+	const tableActionsTwo = {
+		items: [
+			{ label: 'Message Performer', action: () => console.log('Message') },
+			{ label: 'View invitation history', action: () => console.log('Send reminder') }
+		]
+	};
+	const tableActionsThree = {
+		items: [
+			{ label: 'View profile', action: () => console.log('Send reminder') },
+			{ label: 'Message Performer', action: () => console.log('Message') }
+		]
+	};
 
 	const tableConfig = {
 		searchable: false,
@@ -200,6 +219,8 @@
 		isDraggable: true,
 		showRowNumbers: false,
 		hasActions: true,
+		actionsContent: tableActions,
+		showFilters: false,
 		styles: {
 			container: 'w-full',
 			table: 'min-w-full border-collapse overflow-hidden rounded-t-xl',
@@ -219,6 +240,7 @@
 
 	const tableConfig2 = {
 		searchable: true,
+		showFilters: true,
 		hasCheckBox: false,
 		bordered: false,
 		isRounded: true,
@@ -227,6 +249,36 @@
 		isDraggable: true,
 		showRowNumbers: false,
 		hasActions: true,
+		actionsContent: tableActionsTwo,
+		styles: {
+			container: 'w-full',
+			table: 'min-w-full border-collapse overflow-hidden rounded-t-xl',
+			thead: 'bg-[#F7F7F8] h-[60px]',
+			tbody: 'bg-white divide-y divide-gray-200',
+			tr: 'h-[60px]',
+			th: 'px-6 text-center text-sm font-medium text-gray-600 tracking-wider',
+			td: 'px-6 whitespace-nowrap text-sm text-gray-900 text-center'
+		},
+		allowHtml: true,
+		paginated: {
+			status: false,
+			totalPages: Math.ceil(rosterData.length / 10),
+			pageSize: 10
+		}
+	};
+
+	const tableConfig3 = {
+		searchable: true,
+		showFilters: false,
+		hasCheckBox: false,
+		bordered: false,
+		isRounded: true,
+		showTableHead: true,
+		keyField: 'id',
+		isDraggable: true,
+		showRowNumbers: false,
+		hasActions: true,
+		actionsContent: tableActionsThree,
 		styles: {
 			container: 'w-full',
 			table: 'min-w-full border-collapse overflow-hidden rounded-t-xl',
@@ -287,7 +339,7 @@
 					</p>
 				</div>
 				<div class="px-2">
-					<Table columns={tableHeaders} data={$declinedData} {searchQuery} {...tableConfig} />
+					<Table columns={tableHeaders} data={$declinedData} {searchQuery} {...tableConfig3} />
 				</div>
 			</div>
 

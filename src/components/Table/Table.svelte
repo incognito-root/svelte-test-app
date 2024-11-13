@@ -10,6 +10,7 @@
 	import TableRow from './TableRow.svelte';
 	import TableSearch from './TableSearch.svelte';
 	import { createTableStore } from '../../stores/stores/tableStore';
+	import Filters from '../Filters.svelte';
 
 	let currentPage = 1;
 	export let searchQuery: Writable<string> = writable('');
@@ -33,6 +34,7 @@
 	export let showTableHead: TableProps['showTableHead'] = true;
 	export let actionsContent: TableProps['actionContent'] = null;
 	export let styles: TableProps['styles'] = {};
+	export let showFilters: boolean = false;
 
 	// Variables to handle device screen sizes
 	let isMobile = false;
@@ -40,6 +42,7 @@
 	let isDesktop = false;
 	export let columns: TableColumn[] = []; // Ensure it's initialized
 	let filteredColumns = []; // Initialize filteredColumns
+	let isFiltersOpen = false;
 
 	// Create a local writable store for filtered data
 	let filteredData: Writable<any[]> = writable(data);
@@ -120,10 +123,32 @@
 		styles.container
 	)}
 >
-	<div class="w-1/2 self-start">
-		{#if searchable}
-			<TableSearch style="p-3 rounded-md w-full " placeholder="Search..." bind:searchQuery />
-		{/if}
+	<div class="relative w-1/2 self-start">
+		<div class="flex items-center gap-4">
+			{#if searchable}
+				<div class="flex-1">
+					<TableSearch style="p-3 rounded-md w-full" placeholder="Search..." bind:searchQuery />
+				</div>
+			{/if}
+
+			{#if showFilters}
+				<div class="relative pb-6">
+					<button
+						class="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 hover:bg-gray-50"
+						on:click={() => (isFiltersOpen = !isFiltersOpen)}
+					>
+						<img src="src/assets/icons/filter-icon.png" alt="filter" class="h-5 w-5" />
+						<span class="font-medium text-[#0284FE]">Filters</span>
+					</button>
+
+					{#if isFiltersOpen}
+						<div class="absolute left-full bottom-0 z-50 ml-2">
+							<Filters />
+						</div>
+					{/if}
+				</div>
+			{/if}
+		</div>
 	</div>
 
 	<table id="table" class={cn('w-[100%] bg-white text-left text-sm text-gray-500', styles.table)}>

@@ -173,20 +173,24 @@
 			})}
 			on:click={handleDropdownClick}
 		>
-			{#if actionsContent}
-				{@html actionsContent}
-			{:else}
+			<div class="relative">
 				<DotsHorizontalOutline
 					data-testid="dropdown-menu"
 					triggeredBy=".dots-menu"
 					class="dots-menu dark:text-white"
 				/>
 				<Dropdown class="min-w-[200px] shadow-none" triggeredBy=".dots-menu">
-					<DropdownItem>Edit</DropdownItem>
-					<DropdownItem>Delete</DropdownItem>
-					<DropdownItem>View</DropdownItem>
+					{#if actionsContent?.items}
+						{#each actionsContent.items as item}
+							<DropdownItem on:click={item.action}>{item.label}</DropdownItem>
+						{/each}
+					{:else}
+						<DropdownItem>Edit</DropdownItem>
+						<DropdownItem>Delete</DropdownItem>
+						<DropdownItem>View</DropdownItem>
+					{/if}
 				</Dropdown>
-			{/if}
+			</div>
 		</td>
 	{/if}
 </tr>
