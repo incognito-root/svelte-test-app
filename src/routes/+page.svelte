@@ -221,6 +221,7 @@
 		hasActions: true,
 		actionsContent: tableActions,
 		showFilters: false,
+		mobileView: ['RosterPerformer', 'setLength', 'acceptedState', 'roleOnStage'],
 		styles: {
 			container: 'w-full',
 			table: 'min-w-full border-collapse overflow-hidden rounded-t-xl',
@@ -250,6 +251,7 @@
 		showRowNumbers: false,
 		hasActions: true,
 		actionsContent: tableActionsTwo,
+		mobileView: ['RosterPerformer', 'setLength', 'acceptedState', 'roleOnStage'],
 		styles: {
 			container: 'w-full',
 			table: 'min-w-full border-collapse overflow-hidden rounded-t-xl',
@@ -268,7 +270,7 @@
 	};
 
 	const tableConfig3 = {
-		searchable: true,
+		searchable: false,
 		showFilters: false,
 		hasCheckBox: false,
 		bordered: false,
@@ -279,6 +281,7 @@
 		showRowNumbers: false,
 		hasActions: true,
 		actionsContent: tableActionsThree,
+		mobileView: ['RosterPerformer', 'setLength', 'acceptedState', 'roleOnStage'],
 		styles: {
 			container: 'w-full',
 			table: 'min-w-full border-collapse overflow-hidden rounded-t-xl',
@@ -297,13 +300,14 @@
 	};
 </script>
 
-<div class="flex w-full max-w-[1440px]">
-	<div class="w-[22%]">
+<div class="flex w-full flex-col md:max-w-[1440px] md:flex-row">
+	<div class="hidden md:block md:w-[22%]">
 		<!-- Sidebar content -->
 	</div>
-	<div class="flex w-[78%] flex-col gap-8 bg-[#f7f7f8] p-4">
-		<Breadcrumb data={breadcrumbsData} />
-		<div class="flex flex-col gap-6 rounded-2xl bg-white px-6 py-3 pt-6">
+	<div class="flex w-full flex-col gap-8 bg-[#f7f7f8] p-0 md:w-[78%] md:p-4">
+		<div class="mobile-visible"><Breadcrumb data={breadcrumbsData} /></div>
+
+		<div class="flex flex-col gap-6 rounded-2xl bg-white sm:px-2 md:px-6 py-3 pt-6">
 			<p class="color-primary px-6 text-xl">Booking</p>
 			<div>
 				<div class="flex items-center justify-between px-6">
@@ -365,5 +369,15 @@
 
 	.color-tertiary {
 		color: #666c79;
+	}
+
+	.mobile-visible {
+		display: none;
+	}
+
+	@media screen and (min-width: 768px) {
+		.mobile-visible {
+			display: block;
+		}
 	}
 </style>

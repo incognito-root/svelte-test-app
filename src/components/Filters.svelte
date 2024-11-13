@@ -32,7 +32,7 @@
 	}
 </script>
 
-<div class="w-[400px] rounded-lg bg-white p-6 shadow-lg">
+<div class="filter-card-main rounded-lg bg-white p-6 shadow-lg">
 	<div class="mb-6 flex items-center justify-between">
 		<h2 class="text-xl font-semibold">Filters</h2>
 		<button class="text-gray-500 hover:text-gray-700" on:click={handleClose}>
@@ -136,4 +136,14 @@
 </div>
 
 <style>
+	.filter-card-main {
+		width: 400px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.filter-card-main {
+			width: 350px;
+            margin-left: -230px;
+		}
+	}
 </style>

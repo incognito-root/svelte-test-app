@@ -82,7 +82,7 @@
 	}
 </script>
 
-<thead class={cn('bg-white text-xs uppercase text-gray-700', theadStyle)}>
+<thead class={cn('bg-white text-xs uppercase text-gray-700 hidden md:table-header-group', theadStyle)}>
 	<tr id="header-row">
 		{#if hasCheckBox}
 			<th class={cn('!p-4', thStyle)}>

@@ -123,7 +123,7 @@
 		styles.container
 	)}
 >
-	<div class="relative w-1/2 self-start">
+	<div class="relative self-start md:w-1/2">
 		<div class="flex items-center gap-4">
 			{#if searchable}
 				<div class="flex-1">
@@ -142,7 +142,9 @@
 					</button>
 
 					{#if isFiltersOpen}
-						<div class="absolute left-full bottom-0 z-50 ml-2">
+						<div
+							class="absolute bottom-full left-0 z-50 mb-2 w-full md:bottom-0 md:left-full md:mb-0 md:ml-2"
+						>
 							<Filters />
 						</div>
 					{/if}
