@@ -120,9 +120,11 @@
 		styles.container
 	)}
 >
-	{#if searchable}
-		<TableSearch style="p-3 rounded-md w-full" placeholder="Search..." bind:searchQuery />
-	{/if}
+	<div class="w-1/2 self-start">
+		{#if searchable}
+			<TableSearch style="p-3 rounded-md w-full " placeholder="Search..." bind:searchQuery />
+		{/if}
+	</div>
 
 	<table id="table" class={cn('w-[100%] bg-white text-left text-sm text-gray-500', styles.table)}>
 		{#if showTableHead}

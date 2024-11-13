@@ -111,7 +111,7 @@
 				)}
 				on:click={() => column.sortable && sortData(column.key)}
 			>
-				<div class="flex flex-row gap-2">
+				<div class="flex flex-row gap-2 {thStyle}">
 					<span class="my-auto">{column.title}</span>
 					{#if column.sortable}
 						<img class="my-auto" src={DownIcon} alt="sort-icon" />
