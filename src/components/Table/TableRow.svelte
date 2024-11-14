@@ -296,7 +296,7 @@
 												>
 													<img
 														class="mr-1 h-4 w-4"
-														src="src/assets/svg/edit-user-02.png"
+														src="/svg/edit-user-02.png"
 														alt="edit"
 													/>
 													Invited
@@ -317,7 +317,7 @@
 												>
 													<img
 														class="mr-1 h-4 w-4"
-														src="src/assets/svg/tick-circle.png"
+														src="/svg/tick-circle.png"
 														alt="tick"
 													/>
 													Confirmed
@@ -328,7 +328,7 @@
 												<span
 													class="inline-flex items-center justify-center rounded-[6px] bg-[#FF922E26] px-4 py-1 text-xs font-medium text-[#FF922E]"
 												>
-													<img class="mr-1 h-4 w-4" src="src/assets/svg/pin.svg" alt="pin" />
+													<img class="mr-1 h-4 w-4" src="/svg/pin.svg" alt="pin" />
 													Pinned
 												</span>
 											</div>
@@ -337,7 +337,7 @@
 												<span
 													class="inline-flex items-center justify-center rounded-[6px] bg-[#FF666626] px-4 py-1 text-xs font-medium text-[#FF6666]"
 												>
-													<img class="mr-1 h-4 w-4" src="src/assets/svg/cancel.svg" alt="cancel" />
+													<img class="mr-1 h-4 w-4" src="/svg/cancel.svg" alt="cancel" />
 													Declined
 												</span>
 											</div>

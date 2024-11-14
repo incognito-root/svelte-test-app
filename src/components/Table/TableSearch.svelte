@@ -9,7 +9,7 @@
 <div class="w-full mb-5 relative">
   <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
     <img 
-      src="src/assets/icons/search-01.png" 
+      src="/icons/search-01.png" 
       alt="Search"
       class="w-4 h-4"
     />

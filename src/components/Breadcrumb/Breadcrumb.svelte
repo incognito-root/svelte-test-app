@@ -1,7 +1,5 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import BreadcrumbArrow from '../../assets/svg/arrow-up.svg';
-	import BreadcrumbHome from '../../assets/svg/home.svg';
 
 	export let data = [];
 
@@ -18,10 +16,10 @@
 			{#each data as crumb, index}
 				<div class="flex items-center">
 					{#if index > 0}
-						<img src={BreadcrumbArrow} alt="" class="mx-2.5 h-3 w-3" />
+						<img src="/svg/arrow-up.svg" alt="" class="mx-2.5 h-3 w-3" />
 					{/if}
 					{#if index === 0}
-						<img src={BreadcrumbHome} alt="" class="me-2.5 h-3 w-3" />
+						<img src="/svg/home.svg" alt="" class="me-2.5 h-3 w-3" />
 					{/if}
 					{#if index === data.length - 1}
 						<span class="text-Text-Tartiary cursor-default">{crumb.name}</span>

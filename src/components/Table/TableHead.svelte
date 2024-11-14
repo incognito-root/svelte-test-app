@@ -3,7 +3,6 @@
 	import { Checkbox } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
 	import type { TableProps } from './types';
-	import DownIcon from './../../assets/svg/chevron-down.svg';
 
 	export let theadStyle;
 	export let thStyle;
@@ -82,7 +81,9 @@
 	}
 </script>
 
-<thead class={cn('bg-white text-xs uppercase text-gray-700 hidden md:table-header-group', theadStyle)}>
+<thead
+	class={cn('hidden bg-white text-xs uppercase text-gray-700 md:table-header-group', theadStyle)}
+>
 	<tr id="header-row">
 		{#if hasCheckBox}
 			<th class={cn('!p-4', thStyle)}>
@@ -114,7 +115,7 @@
 				<div class="flex flex-row gap-2 {thStyle}">
 					<span class="my-auto">{column.title}</span>
 					{#if column.sortable}
-						<img class="my-auto" src={DownIcon} alt="sort-icon" />
+						<img class="my-auto" src="/svg/chevron-down.svg" alt="sort-icon" />
 					{/if}
 				</div>
 			</th>

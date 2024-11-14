@@ -137,7 +137,7 @@
 						class="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 hover:bg-gray-50"
 						on:click={() => (isFiltersOpen = !isFiltersOpen)}
 					>
-						<img src="src/assets/icons/filter-icon.png" alt="filter" class="h-5 w-5" />
+						<img src="/icons/filter-icon.png" alt="filter" class="h-5 w-5" />
 						<span class="font-medium text-[#0284FE]">Filters</span>
 					</button>
 
